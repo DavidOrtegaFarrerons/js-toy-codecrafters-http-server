@@ -46,7 +46,6 @@ class Response {
     }
 
     toString() {
-        console.log("toString");
         let response = `${this.httpVersion} ${this.status}${EOL}`;
         response += `Content-Type: ${this.contentType}${EOL}`;
         response += `Content-Length: ${this.contentLength}${EOL}`;
