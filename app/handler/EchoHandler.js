@@ -8,7 +8,7 @@ class EchoHandler {
      * @param {string} requestData should contain all the information from the request
      */
     handleRequest(path, requestData) {
-        const body = path.split('/')[2];
+        const body = path.replace('/echo/','');
         return ResponseFactory.createWithBody(STATUS.OK, body).toString();
     }
 }
