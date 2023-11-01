@@ -2,7 +2,7 @@ const EOL = "\r\n";
 const HTTP_VERSION = "HTTP/1.1";
 const STATUS = {
     OK: "200 OK",
-    CREATED_SUCCESS: "201 Created success",
+    CREATED_SUCCESS: "201 Created",
     NOT_FOUND: "404 Not Found",
     SERVER_ERROR: "Internal Server Error"
 }
