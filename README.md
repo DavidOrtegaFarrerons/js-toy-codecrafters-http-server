@@ -90,7 +90,7 @@ For stage 4, the requirements were:
 
 So, now we have different routes, we have to send a response with a content type and a body, looks like we can create a class for it, and so did I.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/372aa431-9022-4ffa-8514-87c90193217f/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2F372aa431-9022-4ffa-8514-87c90193217f%2FUntitled.png?table=block&id=0b0083a5-f2fe-418c-8eaf-855d57a41aae&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 One cool tip I can give you is that the contentLength only changes when the body changes, so, we can do something like this:
 
@@ -107,19 +107,19 @@ And then we'll make sure that every time the body is setted, the contentLength w
 
 As we have a Response class, and we will need different types of responses, I thought of using a ResponseFactory, who would be responsible for giving different responses:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/60ccf1da-74f6-4475-a203-e1b2467ee2d3/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2F60ccf1da-74f6-4475-a203-e1b2467ee2d3%2FUntitled.png?table=block&id=25a67952-847d-4fc0-bb3e-9f7d0c6514d6&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 Now we have a Response that is structured correctly, and a factory that creates them based on parameters. Its time to create a simple routing:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/c93db307-c8d0-4796-8926-898b9874e8a7/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2Fc93db307-c8d0-4796-8926-898b9874e8a7%2FUntitled.png?table=block&id=f8eb4e15-0de1-4c49-bf35-749388975a5e&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 When we have routes that contain a "*" or "{string}" at the end, I had no other way of checking them than going the old way, using the `path.includes('/echo')` made the trick for me.
 
 Now, we have a router, responses, but we still need some handlers for this requests:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/3160a201-f2b1-4ed5-975f-952cf694ed99/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2F3160a201-f2b1-4ed5-975f-952cf694ed99%2FUntitled.png?table=block&id=8d0d01cb-1ac2-42bb-8970-8eef1c328c3f&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/ef764b8c-72a8-42c9-b243-c28d18819d3b/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2Fef764b8c-72a8-42c9-b243-c28d18819d3b%2FUntitled.png?table=block&id=8af0fbc0-8eb0-4ac4-a692-af15193245fe&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 With all of this, we have finished stage 4! (It is not necessary to make all this refactoring, indeed, I haven't seen many users create any file besides the one given from codecrafters, but this is not a race, we can spend as much as we want making things as we would like to find them!).
 
@@ -133,7 +133,7 @@ Now I won't be explaining everything into detail as you now know that we have a 
 
 This is an easy one! We just have to create the Handler, add it into the router, and add the required logic:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/da127576-e511-43cd-b71c-db9b8378d943/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2Fda127576-e511-43cd-b71c-db9b8378d943%2FUntitled.png?table=block&id=eb71a7fe-a1ed-43d0-92b9-07670e0771e5&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 [Commit](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/79c79dd5da24016a1dbf7e0eee78e250f3c73106) [Fix](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/fff0c3ea01dd80bc1d84a3117af4105815fe0e11)
 
@@ -145,7 +145,7 @@ Requirements for this stage were simple:
 
 So that's what I did, simply removing this line:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/33ad49ac-820f-4a04-90d1-00294af5f141/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2F33ad49ac-820f-4a04-90d1-00294af5f141%2FUntitled.png?table=block&id=199ed6b4-f405-4cd4-b6cd-af78b56ebfe5&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=610&userId=&cache=v2)
 
 [Commit](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/042a495f8e2c7be4a1f9f3226e8f0a6e6f06c7cf)
 
@@ -167,7 +167,7 @@ We are almost finished, and now, things start to get a bit more complicated!
 
 So, for this task I needed to see how to get the sent arguments in js (spoiler: ***`process***.argv`), then, I needed to try and read a file, and finally, send the response:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/bebae6cb-4b41-4235-98bb-34ea226d2838/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2Fbebae6cb-4b41-4235-98bb-34ea226d2838%2FUntitled.png?table=block&id=3607003e-aaa4-43ea-954a-32322669ad57&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 ### Stage 8:
 
@@ -186,13 +186,13 @@ Last stage! We are almost there, let's see the requirements:
 
 > The good part of preparing the code to be easy to extend and to have it decoupled, makes that the problem of having GET and POST requests (when our code thought we would only have > "GET" ones), gets away easily by adding some changes on the router:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/790cdb04-b887-4eec-ad18-7ede1a1af7ba/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2F790cdb04-b887-4eec-ad18-7ede1a1af7ba%2FUntitled.png?table=block&id=c3f477d4-7087-4e77-a99a-6505719bf191&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 [Commit](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/53d071dcdf3d645c22a81380b66879d3ed31e810#diff-c2dc09eb867d41ec8544280b8582b73ddb05445765370cc2e3f7846716d27f88)
 
 Now, we just create the new handler with the logic inside it:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/38351216-7c14-43ba-9f43-3544161f633a/1a59c9ab-bc1e-4a27-86e9-805707c53b77/Untitled.png)
+![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2F1a59c9ab-bc1e-4a27-86e9-805707c53b77%2FUntitled.png?table=block&id=bb01d601-880b-4a24-b994-8fc87f0a7b2c&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
 [All commits](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commits/master)
 
