@@ -16,7 +16,7 @@ class StoreFilesHandler {
         }
         let filename = path.substring("/files/".length);
         let filePath = process.argv[3] + filename;
-        let body = requestData.split('\r\n')[7];
+        let body = requestData.split('\r\n\r\n').at(-1);
 
         try  {
             if(!fs.existsSync(filePath)) {
