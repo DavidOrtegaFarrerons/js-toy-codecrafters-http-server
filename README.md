@@ -2,7 +2,6 @@ CodeCrafters Build your own HTTP Server (JS)
 ============================================
 
 ## Table of Contents
-1. [Introduction](#introduction)
 2. [Stage 2](#stage-2)
 3. [Stage 3](#stage-3)
 4. [Stage 4](#stage-4)
@@ -11,6 +10,7 @@ CodeCrafters Build your own HTTP Server (JS)
 7. [Stage 7](#stage-7)
 8. [Stage 8](#stage-8)
 9. [The End](#the-end)
+10. [How to run it](#how-to-run-it)
 
 ### Stage 2
 --------
@@ -93,7 +93,7 @@ let response = responseByPath(path);
 
 [Commit](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/79dc5ae7454ada1214ecaa8890da23602c808c22)
 
-### Stage 4:
+### Stage 4
 
 For stage 4, the requirements were:
 
@@ -148,7 +148,7 @@ This is an easy one! We just have to create the Handler, add it into the router,
 
 [Commit](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/79c79dd5da24016a1dbf7e0eee78e250f3c73106) [Fix](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/fff0c3ea01dd80bc1d84a3117af4105815fe0e11)
 
-### Stage 6:
+### Stage 6
 
 Requirements for this stage were simple:
 
@@ -160,7 +160,7 @@ So that's what I did, simply removing this line:
 
 [Commit](https://github.com/DavidOrtegaFarrerons/js-toy-codecrafters-http-server/commit/042a495f8e2c7be4a1f9f3226e8f0a6e6f06c7cf)
 
-### Stage 7:
+### Stage 7
 
 We are almost finished, and now, things start to get a bit more complicated!
 
@@ -180,7 +180,7 @@ So, for this task I needed to see how to get the sent arguments in js (spoiler: 
 
 ![Untitled](https://daily-spleen-27b.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F38351216-7c14-43ba-9f43-3544161f633a%2Fbebae6cb-4b41-4235-98bb-34ea226d2838%2FUntitled.png?table=block&id=3607003e-aaa4-43ea-954a-32322669ad57&spaceId=38351216-7c14-43ba-9f43-3544161f633a&width=2000&userId=&cache=v2)
 
-### Stage 8:
+### Stage 8
 
 Last stage! We are almost there, let's see the requirements:
 
@@ -218,3 +218,8 @@ Add helper class to get the different parts of a requests (method, path, body et
 Maybe Handlers could have pointed to services so that if in the future any operation a handler does, is required by another, it just has to call the service, but as I have not seen it necessary and the code is very small, I have not done it yet.
 
 Hope you liked this Readme / Post.
+
+
+## How to run it:
+
+In order to run the project, make sure you have node.js v18 installed. Then, you can run the `./your_server.sh` (if you want to get and post files, use the `--directory`: `./your_server.sh --directory /path/to/directory`).
