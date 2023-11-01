@@ -22,7 +22,7 @@ class FilesHandler {
             return ResponseFactory.createDefaultNotFoundResponse().toString();
         }
 
-        return ResponseFactory.createWithBodyAndContentType(STATUS.OK, CONTENT_TYPE.APPLICATION_OCTET, file.toString()).toString();
+        return ResponseFactory.createWithBodyAndContentType(STATUS.OK, CONTENT_TYPE.APPLICATION_OCTET_STREAM, file.toString()).toString();
     }
 }
 

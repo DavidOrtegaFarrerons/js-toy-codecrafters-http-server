@@ -6,7 +6,7 @@ const STATUS = {
 }
 const CONTENT_TYPE = {
     TEXT_PLAIN: "text/plain",
-    APPLICATION_OCTET: "application/octet"
+    APPLICATION_OCTET_STREAM: "application/octet-stream"
 }
 
 
