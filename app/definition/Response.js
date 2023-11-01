@@ -4,7 +4,7 @@ const STATUS = {
     OK: "200 OK",
     CREATED_SUCCESS: "201 Created",
     NOT_FOUND: "404 Not Found",
-    SERVER_ERROR: "Internal Server Error"
+    SERVER_ERROR: "500 Internal Server Error"
 }
 const CONTENT_TYPE = {
     TEXT_PLAIN: "text/plain",
