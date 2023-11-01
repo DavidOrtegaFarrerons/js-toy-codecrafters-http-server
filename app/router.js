@@ -2,7 +2,8 @@ const {ResponseFactory} = require("./factory/ResponseFactory.js");
 
 const routes = {
     '/': new (require('./handler/RootHandler.js').RootHandler),
-    '/echo': new (require('./handler/EchoHandler.js').EchoHandler)
+    '/echo': new (require('./handler/EchoHandler.js').EchoHandler),
+    '/user-agent': new (require('./handler/UserAgentHandler.js').UserAgentHandler),
 
 }
 

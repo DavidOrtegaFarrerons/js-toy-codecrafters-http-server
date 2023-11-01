@@ -13,6 +13,8 @@ function getRequestPath(requestInfo) {
     return requestInfo.split(' ', 2)[1];
 }
 
+
+
 const server = net.createServer((socket) => {
     socket.on("data", (data) => {
         const requestInfo = data.toString();
