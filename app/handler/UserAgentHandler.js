@@ -8,13 +8,12 @@ class UserAgentHandler {
      * @param {string} requestData should contain all the information from the request
      */
     handleRequest(path, requestData) {
-
         const body = this.getUserAgent(requestData);
         return ResponseFactory.createWithBody(STATUS.OK, body).toString();
     }
 
     getUserAgent(requestInfo) {
-        return requestInfo.split('\n')[2].split(' ')[1];
+        return requestInfo.split('\n')[2].split(' ')[1].trim();
     }
 }
 
