@@ -2,7 +2,9 @@ const EOL = "\r\n";
 const HTTP_VERSION = "HTTP/1.1";
 const STATUS = {
     OK: "200 OK",
-    NOT_FOUND: "404 Not Found"
+    CREATED_SUCCESS: "201 Created success",
+    NOT_FOUND: "404 Not Found",
+    SERVER_ERROR: "Internal Server Error"
 }
 const CONTENT_TYPE = {
     TEXT_PLAIN: "text/plain",

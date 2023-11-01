@@ -2,9 +2,9 @@ const {ResponseFactory} = require("../factory/ResponseFactory");
 const {STATUS, CONTENT_TYPE} = require('../definition/Response.js');
 const fs = require("fs");
 
-class FilesHandler {
+class StoreFilesHandler {
     /**
-     * @method GET
+     * @method POST
      * @route "/files/{filename}"
      * @param {string} path the path of the request
      * @param {string} requestData should contain all the information from the request
@@ -16,15 +16,16 @@ class FilesHandler {
         let filename = path.split('/', 3)[2];
         let filePath = process.argv[3] + filename;
 
-        let file = null;
+
         try  {
-            file = fs.readFileSync(filePath);
+            let body = requestData.split('\r\n')[7];
+            fs.writeFile(filePath, body, 'utf-8', () => {});
         } catch (e) {
-            return ResponseFactory.createDefaultNotFoundResponse().toString();
+            return ResponseFactory.createDefaultErrorResponse().toString();
         }
 
-        return ResponseFactory.createWithBodyAndContentType(STATUS.OK, CONTENT_TYPE.APPLICATION_OCTET_STREAM, file.toString()).toString();
+        return ResponseFactory.createWithStatus(STATUS.CREATED_SUCCESS).toString();
     }
 }
 
-module.exports = { FilesHandler }
+module.exports = { StoreFilesHandler }

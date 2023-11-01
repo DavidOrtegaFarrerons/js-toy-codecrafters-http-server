@@ -10,9 +10,18 @@ class ResponseFactory {
         return new Response(STATUS.NOT_FOUND);
     }
 
+    static createDefaultErrorResponse() {
+        return new Response(STATUS.SERVER_ERROR);
+    }
+
+    static createWithStatus(status) {
+        return new Response(status);
+    }
+
     static createWithBody(responseStatus, body) {
         return new Response(responseStatus, CONTENT_TYPE.TEXT_PLAIN).setBody(body);
     }
+
     static createWithBodyAndContentType(responseStatus, contentType, body) {
         return new Response(responseStatus, contentType).setBody(body);
     }
