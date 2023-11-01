@@ -11,7 +11,6 @@ const CONTENT_TYPE = {
     APPLICATION_OCTET_STREAM: "application/octet-stream"
 }
 
-
 class Response {
 
     constructor(status, contentType, body = '') {
@@ -54,7 +53,7 @@ class Response {
         response += `Content-Length: ${this.contentLength}${EOL}`;
         response += EOL;
         response += this.body;
-        response += EOL + EOL; //Define end of response
+        response += EOL + EOL; //Defines end of response
         return response;
     }
 }

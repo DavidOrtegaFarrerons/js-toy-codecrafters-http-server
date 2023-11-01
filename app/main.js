@@ -13,14 +13,11 @@ function getRequestData(requestInfo) {
     return requestInfo.split(' ', 2);
 }
 
-
-
 const server = net.createServer((socket) => {
     socket.on("data", (data) => {
         const requestInfo = data.toString();
         const [method, path] = getRequestData(requestInfo);
         const response = router.route(method, path, requestInfo);
-
         socket.write(response);
         socket.end();
     });

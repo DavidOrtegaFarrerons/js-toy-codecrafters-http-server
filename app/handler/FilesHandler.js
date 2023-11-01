@@ -11,7 +11,7 @@ class FilesHandler {
      */
     handleRequest(path, requestData) {
         if (process.argv[2] !== "--directory" || !process.argv[3]) {
-            throw new Error("Please, provide a directory when running the server")
+            throw new Error("Please, provide a directory using \"--directory\" when running the server")
         }
         let filename = path.split('/', 3)[2];
         let filePath = process.argv[3] + filename;

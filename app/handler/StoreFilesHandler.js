@@ -28,7 +28,6 @@ class StoreFilesHandler {
 
             fs.writeFileSync(filePath, body);
         } catch (e) {
-            console.log(e);
             return ResponseFactory.createDefaultErrorResponse().toString();
         }
 

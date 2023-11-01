@@ -2,6 +2,7 @@ const {ResponseFactory} = require("../factory/ResponseFactory");
 
 class RootHandler {
     /**
+     * @method GET
      * @route "/"
      * @param {string} path the path of the request
      * @param {string} requestData contains all the information from the request
