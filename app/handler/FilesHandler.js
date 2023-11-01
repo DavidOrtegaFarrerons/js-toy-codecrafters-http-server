@@ -18,12 +18,12 @@ class FilesHandler {
         console.log("FILEPATH: " + filePath);
 
         try  {
-            let file = fs.readFileSync(filePath);
+            fs.readFileSync(filePath);
         } catch (e) {
-            return ResponseFactory.createDefaultNotFoundResponse();
+            return ResponseFactory.createDefaultNotFoundResponse().toString();
         }
 
-        return ResponseFactory.createDefaultOkResponse();
+        return ResponseFactory.createDefaultOkResponse().toString();
     }
 }
 
