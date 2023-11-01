@@ -1,5 +1,5 @@
 const {ResponseFactory} = require("../factory/ResponseFactory");
-const {STATUS} = require('../definition/Response.js');
+const {STATUS, CONTENT_TYPE} = require('../definition/Response.js');
 const fs = require("fs");
 
 class FilesHandler {
@@ -14,16 +14,15 @@ class FilesHandler {
         }
         let filename = path.split('/', 3)[2];
         let filePath = process.argv[3] + filename;
-        console.log("FILENAME: " + filename);
-        console.log("FILEPATH: " + filePath);
 
+        let file = null;
         try  {
-            fs.readFileSync(filePath);
+            file = fs.readFileSync(filePath);
         } catch (e) {
             return ResponseFactory.createDefaultNotFoundResponse().toString();
         }
 
-        return ResponseFactory.createDefaultOkResponse().toString();
+        return ResponseFactory.createWithBodyAndContentType(STATUS.OK, CONTENT_TYPE.APPLICATION_OCTET, file.toString()).toString();
     }
 }
 

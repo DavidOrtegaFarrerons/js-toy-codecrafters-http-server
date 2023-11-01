@@ -5,7 +5,8 @@ const STATUS = {
     NOT_FOUND: "404 Not Found"
 }
 const CONTENT_TYPE = {
-    TEXT_PLAIN: "text/plain"
+    TEXT_PLAIN: "text/plain",
+    APPLICATION_OCTET: "application/octet"
 }
 
 
