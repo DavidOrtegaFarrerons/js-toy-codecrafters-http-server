@@ -12,6 +12,7 @@ CodeCrafters Build your own HTTP Server (JS)
 9. [The End](#the-end)
 10. [How to run it](#how-to-run-it)
 
+Disclaimer: As Stage 0 is to clone the repository and Stage 1 is to uncomment code, they have not been included in the table of contents, so the explanation starts in Stage 2.
 ### Stage 2
 --------
 
