@@ -1,7 +1,18 @@
 CodeCrafters Build your own HTTP Server (JS)
 ============================================
 
-Stage 2:
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Stage 2](#stage-2)
+3. [Stage 3](#stage-3)
+4. [Stage 4](#stage-4)
+5. [Stage 5](#stage-5)
+6. [Stage 6](#stage-6)
+7. [Stage 7](#stage-7)
+8. [Stage 8](#stage-8)
+9. [The End](#the-end)
+
+### Stage 2
 --------
 
 For stage 2, my first step was to convert the port and the hostname to constants so that the code was more readable:
@@ -33,7 +44,7 @@ socket.write("HTTP/1.1 200 OK\\r\\n\\r\\n");
 
 ```
 
-Stage 3:
+### Stage 3
 --------
 
 On stage 3 started again with some refactoring, now we have two possible responses, so the first thing was to define them, I also added the HTTP Version as a constant so it was more clear what the code did:
