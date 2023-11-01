@@ -14,7 +14,7 @@ class StoreFilesHandler {
         if (process.argv[2] !== "--directory" || !process.argv[3]) {
             throw new Error("Please, provide a directory when running the server")
         }
-        let filename = path.split('/', 3)[2];
+        let filename = path.substring("/files/".length);
         let filePath = process.argv[3] + filename;
         let body = requestData.split('\r\n')[7];
 
@@ -28,6 +28,7 @@ class StoreFilesHandler {
 
             fs.writeFileSync(filePath, body);
         } catch (e) {
+            console.log(e);
             return ResponseFactory.createDefaultErrorResponse().toString();
         }
 
