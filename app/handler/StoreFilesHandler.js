@@ -1,6 +1,7 @@
 const {ResponseFactory} = require("../factory/ResponseFactory");
 const {STATUS, CONTENT_TYPE} = require('../definition/Response.js');
 const fs = require("fs");
+const pathLib = require("path");
 
 class StoreFilesHandler {
     /**
@@ -15,11 +16,17 @@ class StoreFilesHandler {
         }
         let filename = path.split('/', 3)[2];
         let filePath = process.argv[3] + filename;
-
+        let body = requestData.split('\r\n')[7];
 
         try  {
-            let body = requestData.split('\r\n')[7];
-            fs.writeFile(filePath, body, 'utf-8', () => {});
+            if(!fs.existsSync(filePath)) {
+                const folder = pathLib.dirname(filePath)
+                if(!fs.existsSync(folder)) {
+                    fs.mkdirSync(folder);
+                }
+            }
+
+            fs.writeFileSync(filePath, body);
         } catch (e) {
             return ResponseFactory.createDefaultErrorResponse().toString();
         }
